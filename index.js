@@ -13,9 +13,6 @@ module.exports = (robot) => {
     // at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
     var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
     var clientSecret = process.env.CLIENT_SECRET;
-    // Authorize a client with the loaded credentials, then call the
-    // Google Sheets API.
-    authorize(JSON.parse(clientSecret), checkClaSheet);
 
     /**
       * Create an OAuth2 client with the given credentials, and then execute the
@@ -158,6 +155,10 @@ module.exports = (robot) => {
       });
     };
   };
+
+  // Authorize a client with the loaded credentials, then call the
+  // Google Sheets API.
+  authorize(JSON.parse(clientSecret), checkClaSheet);
 
   /*
     Please use GitHub Webhook Payloads and not REST APIs.
